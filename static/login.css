@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.login-card {
+    position: relative;
+    width: 380px;
+    padding: 60px 40px 40px 40px;
+    /* Top padding increased for text spacing */
+    background: #ffffff;
+    border-radius: 4px;
+    /* Slightly sharper corners like image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 40px;
+    /* Space for the popping icon */
+}
+
+/* Icon popping out top */
+.icon-container {
+    width: 90px;
+    height: 90px;
+    background: #62c3b5;
+    /* Teal color matching image */
+    border-radius: 50%;
+    position: absolute;
+    top: -45px;
+    /* Half height to overlap top */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #ffffff;
+    /* White ring constraint? Or just shadow? Image doesn't show border but keeping it clean */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container svg {
+    width: 45px;
+    height: 45px;
+    fill: #ffffff;
+    /* White icon */
+}
+
+h2.title {
+    color: #777;
+    /* Grey text */
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 2px;
+    /* Sharper corners */
+    font-size: 14px;
+    color: #555;
+    transition: 0.3s;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-control:focus {
+    border-color: #62c3b5;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: #62c3b5;
+    /* Teal color */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #52a89b;
+}
+
+.error-msg {
+    background: #fef2f2;
+    color: #ef4444;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    border: 1px solid #fecaca;
+}

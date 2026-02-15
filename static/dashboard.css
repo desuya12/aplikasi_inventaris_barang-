@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+    z-index: 10;
+}
+
+.sidebar-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 12px;
+}
+
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #4b5563;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebar-btn:hover {
+    background: #f0fdf9;
+    /* Light Teal background */
+    color: #115e59;
+    /* Teal Text */
+}
+
+.sidebar-btn.active {
+    background: #62c3b5;
+    color: white;
+    box-shadow: 0 4px 12px rgba(98, 195, 181, 0.3);
+}
+
+.sidebar-btn.exit {
+    margin-top: auto;
+    color: #dc2626;
+}
+
+.sidebar-btn.exit:hover {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Header & Actions */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.top-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.action-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #111827;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Action Link Styles */
+a.action-btn {
+    text-decoration: none !important;
+}
+
+/* Default Black Button */
+a.action-btn:not(.green) {
+    color: black !important;
+}
+
+a.action-btn:not(.green):visited,
+a.action-btn:not(.green):hover,
+a.action-btn:not(.green):active {
+    color: #111827;
+}
+
+/* Green Button Variant */
+.action-btn.green {
+    background: #bbf7d0;
+    /* Light Green */
+    border-color: #bbf7d0;
+    color: #14532d !important;
+    /* Dark Green Text */
+}
+
+a.action-btn.green,
+a.action-btn.green:visited,
+a.action-btn.green:hover,
+a.action-btn.green:active {
+    color: #14532d !important;
+    /* Force Green Text even on links */
+}
+
+.action-btn.green:hover {
+    background: #86efac;
+    border-color: #86efac;
+}
+
+/* Active State for Navigation Buttons */
+.action-btn.active {
+    background-color: #62c3b5 !important;
+    color: white !important;
+    border-color: #62c3b5 !important;
+    box-shadow: 0 4px 12px rgba(98, 195, 181, 0.3);
+}
+
+/* Content Area */
+.content-area {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e7eb;
+}
+
+/* Search */
+.search-bar-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+.search-input {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    width: 300px;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    background: white;
+    border-color: #62c3b5;
+    box-shadow: 0 0 0 3px rgba(98, 195, 181, 0.1);
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 16px 24px;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    color: #111827;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.data-table tbody tr:hover td {
+    background-color: #f9fafb;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 16px;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        gap: 10px;
+    }
+
+    .sidebar-title {
+        display: none;
+    }
+
+    .sidebar-btn {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+/* Table Edit Button */
+.btn-edit-row {
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: #374151;
+    transition: all 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    min-width: 80px;
+    /* Adjusted width */
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-edit-row:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    color: #111827;
+}
+
+/* Bottom Action Area */
+.bottom-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+/* Wide Button (TAMBAH BARANG BARU) */
+.btn-wide {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fbf6f6;
+    padding: 32px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 2px solid #000;
+    position: relative;
+}
+
+.modal-header-pill {
+    background: #e0e0e0;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.modal-input-group {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.modal-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.modal-input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #333;
+    background: transparent;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    font-weight: 500;
+}
+
+.scan-box-area {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scan-box {
+    width: 60px;
+    height: 60px;
+    background: #e0e0e0;
+    border: 2px solid #333;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.btn-modal-submit {
+    width: 100%;
+    background: #e0e0e0;
+    border: 2px solid #333;
+    border-radius: 30px;
+    padding: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-modal-submit:hover {
+    background: #d5d5d5;
+}
